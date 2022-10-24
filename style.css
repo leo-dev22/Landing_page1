@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap');
+
 :root{
-  --colorPrimary:#eb443e;
+  /* --colorPrimary:#eb443e; */
+  --colorPrimary:#de0000;
   --colorLight:#fff;
   --colorDark:#0a0a0c;
   --colorBackground:linear-gradient(-25deg,#e6e8ec,#fff);
@@ -17,11 +20,14 @@ body{
   background: var(--colorBackground);
   color: var(--colorDark);
   overflow: hidden;
+  font-family: "Poppins",sans-serif;
 }
 a{
   color: var(--colorDark);
-  font-size: .9rem;
+  font-size: 16px;
+  line-height: 24px;
   transition: all .3s ease;
+  padding: 10px 0;
 }
 a:hover{
   color: var(--colorPrimary);
@@ -30,11 +36,12 @@ a:hover{
   display: inline-block;
   background: var(--colorPrimary);
   padding: .5em 2.4rem;
+  color: white;
   border-radius:2rem;
   border: 1px solid transparent;
 }
 .btn:hover{
-  color: var(--colorDark);
+  color: var(--colorPrimary);
   background: transparent;
   border: 1px solid var(--colorDark);
 }
@@ -44,29 +51,38 @@ header{
 }
 header .container{
   position: relative;
-  width: 86%;
+  width: 94%;
   height: 100%;
   margin: 0 auto;
+  border: 2px red solid;
 }
 header .container nav{
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin: 1.2rem;
   position: absolute;
   z-index: 5;
 }
 header .container nav .logo{
-  font-size: 2.4rem;
+  border: 2px solid var(--colorPrimary);
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 50%;
+  background: var(--colorPrimary);
 }
-header .container nav .logo i::before{
-  margin: 0;
+header .container nav .logo img{
+width: 100%;
 }
+
 header .container nav ul{
   display: flex;
-  gap: 3.6rem;
+  gap: 5rem;
   align-items: center;
+}
+
+header .container nav a.active{
+border-bottom: 4px solid var(--colorPrimary);
 }
 header .container nav ul i{
   font-size: 1.3rem;
@@ -80,6 +96,7 @@ header .container section{
   align-items: center;
   width: 100%;
   height: 100%;
+  border: 2px solid green;
 }
 header .container section .left h2{
   font-size: 2rem;
@@ -104,32 +121,39 @@ header .container section .left .btn{
   margin-top: 2rem;
   padding: 1.2rem 3rem;
 }
-header .container section .right {
+header .container section .right div {
   position: relative;
-  display: grid;
+  display: flex;
+  gap: 50px;
   place-items: center;
 }
 header .container section .right .arrièrePlan{
-  background: var(--colorBackground);
-  width: 30rem;
-  height: 30rem;
+  background:#de000049;
+  width: 25rem;
+  height: 25rem;
   z-index: -1;
   border-radius: 50%;
   justify-self: end;
   margin-top: 2rem;
 }
-header .container section .right .image{
-width: 30rem;
-height: 30rem;
+header .container section .right .image1{
+width: 25rem;
+height: 25rem;
 position:absolute;
-right: 5rem;
+right: 2rem;
 }
-header .container section .right .image img{
+header .container section .right .image{
+width: 25rem;
+height: 25rem;
+position:absolute;
+right: 45rem;
+}
+header .container section .right .image img,header .container section .right .image1 img{
   width: 100%;
   transform: rotate(35deg);
   z-index: 0;
   transition: all 1s ease;
 }
-header .container section .right .image img:hover{
-transform: rotate(0deg) scale(1.2);
+header .container section .right .image img:hover,header .container section .right .image1 img:hover{
+transform: rotate(-35deg) scale(1.2);
 }
